@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 
 import styles from '../styles/Search.module.css'
 
 export function Search() {
   const router = useRouter()
+  const notify = (message) => toast.error(message)
 
   const [text, setText] = useState('')
 
   function onSubmit(e) {
     e.preventDefault()
-    router.push(`/ticker/${text}`)
+
+    if (text.length === 0) return notify('Escreva algo homi')
+    if (!isNaN(parseFloat(text))) return notify('Escreva direito homi')
+
+    router.push(`/ticker/${text.toUpperCase()}`)
   }
   return (
     <main className={styles.searchContainer}>
