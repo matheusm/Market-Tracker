@@ -1,6 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+## Important !!!
+You need to setup your environment variables in your .env
+
+```
+	NEXT_PUBLIC_API_KEY=
+	NEXT_PUBLIC_API_BASE_URL=
+```
+
 
 First, run the development server:
 
