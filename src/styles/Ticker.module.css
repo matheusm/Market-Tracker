@@ -1,0 +1,41 @@
+.tickerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tickerDescription{
+  text-align: justify;
+}
+
+.tickerInfos{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tickerInfos > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tickerInfos > div:first-child{
+  align-items: flex-start;
+}
+.tickerInfos > div:last-child{
+  align-items: flex-end;
+}
+.tickerInfos > div > p:first-child{
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.tickerInfos > div > p:last-child{
+  margin: 0;
+}

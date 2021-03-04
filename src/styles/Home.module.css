@@ -1,0 +1,33 @@
+.recomendationContainer {
+  width: 100%;
+}
+
+.recomendationContainer > div {
+  display: flex;
+  margin: 0 auto;
+
+  width: 100%;
+  max-width: 308px;
+  align-items: center;
+  justify-content: center;
+}
+
+.recomendationContainer a {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  transform: scale(0.9);
+  transition: 0.2s all ease-in-out;
+}
+
+.recomendationContainer a:hover{
+  transform: scale(1);
+}
+
+.recomendationContainer a:nth-child(2){
+  margin: 0 8px;
+}
+
+.recomendationContainer a img {
+  width: 100%;
+}

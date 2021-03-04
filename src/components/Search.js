@@ -1,22 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { StockContext } from '../contexts/StockContext';
+
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 
 import styles from '../styles/Search.module.css'
 
 export function Search() {
+  const {loading, latestPrice, currentCurrency, setCurrentCurrency } = useContext(
+    StockContext
+  );
+
   const router = useRouter()
   const notify = (message) => toast.error(message)
 
   const [text, setText] = useState('')
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault()
 
     if (text.length === 0) return notify('Escreva algo homi')
     if (!isNaN(parseFloat(text))) return notify('Escreva direito homi')
+    
+    return router.push(`/ticker/${text.toUpperCase()}`)
 
-    router.push(`/ticker/${text.toUpperCase()}`)
   }
   return (
     <main className={styles.searchContainer}>
